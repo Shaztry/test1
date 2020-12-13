@@ -186,7 +186,5 @@ def whileLoop():
             print("Invalid input. please valid options")
         options=readMain()
         
-
-sg.Window(title="HelloWorld", layout=[[]], margins=(100,50)).read()
-
-#whileLoop()
+        
+whileLoop()
