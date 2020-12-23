@@ -1396,7 +1396,7 @@ html {
 }
 
 body {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Rosemary';
     font-size: 14px;
     line-height: 1.42857143;
     color: #333;
@@ -3225,7 +3225,8 @@ textarea.form-control {
     height: auto
 }
 
-@media screen and (-webkit-min-device-pixel-ratio:0) {
+
+/*@media screen and (-webkit-min-device-pixel-ratio:0) {
     input[type=date].form-control,
     input[type=datetime-local].form-control,
     input[type=month].form-control,
@@ -3252,7 +3253,7 @@ textarea.form-control {
     input[type=time].input-lg {
         line-height: 46px
     }
-}
+}*/
 
 .form-group {
     margin-bottom: 15px
