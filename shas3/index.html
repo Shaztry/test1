@@ -24,14 +24,38 @@
             border-radius: 5px;
         }
         
-        .alert {
-            visibility: hidden;
-            position: absolute;
-        }
-        
         #result {
             height: 150px;
             width: 100px;
+        }
+        /*new alert style*/
+        /* The alert message box */
+        
+        .alert {
+            padding: 20px;
+            background-color: #f44336;
+            /* Red */
+            color: white;
+            margin-bottom: 15px;
+            visibility: hidden;
+            position: absolute;
+        }
+        /* The close button */
+        
+        .closebtn {
+            margin-left: 15px;
+            color: white;
+            font-weight: bold;
+            float: right;
+            font-size: 22px;
+            line-height: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        /* When moving the mouse over the close button */
+        
+        .closebtn:hover {
+            color: black;
         }
     </style>
 </head>
@@ -155,13 +179,14 @@
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <button class="btn btn-default" onsubmit="return chippi()" onmouseover="hideAlert()">Submit</button>
+                    <button class="btn btn-default" onclick="return chippi()" onmouseover="hideAlert()">Submit</button>
                 </div>
             </div>
     </div>
     </div>
-    <div class='alert alert-danger' role='alert' id='divAlert'>
-
+    <div class="alert alert-danger" id="divAlert">
+        <span class="closebtn">&times;</span>
+        <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
     </div>
 </body>
 
