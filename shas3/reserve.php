@@ -14,6 +14,9 @@ if (!$conn) {
     die("Connection Failed : " . mysqli_connect_error());
 }
 
+
+function main()
+{
     $hostserver = '127.0.0.1';
     $username = 'shas3';
     $password = 'shas3@123';
@@ -22,36 +25,25 @@ if (!$conn) {
     //When user submits the form run the below code
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // collect value of input field
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-        $fnameQuery = "SELECT username FROM user_register";
-            $fnameResult = mysqli_query($conn, $fnameQuery);
-            while ($fnameFetch = mysqli_fetch_array($fnameResult)) {
-                if ($username == $fnameFetch['username']) {
-                    echo "
-                <script>
-                    alert('User Already exist');
-                    history.back();
-                </script>
-            ";
-                    die();
-                }
-            }
-        $userid = "select userid from user_register where username = '$username'";
+        $srcaddr = $_POST['srcaddr'];
+        $destaddr = $_POST['destaddr'];
+        $userid = $_POST['userid'];
+        $amount = $_POST['amount'];
         //insertion Query
-        $sqlQuery = "insert into user_register(username, password) values('$username','$password')";
+        $sqlQuery = "insert into user_reservation(userid, sourceaddr, destinationaddr, amount) values('$userid','$srcaddr', '$destaddr',$amount)";
         $commit = "commit;";
         if (mysqli_query($conn, $sqlQuery)) {
             mysqli_query($conn, $commit);
             echo "
             <script>
                 alert('Data Inserted Successfully');
-                window.location = 'user_reservation.php';
+                //window.location = 'user_reservation.html';
             </script>
                 ";
         } else {
             die("something went Wrong : " . mysqli_connect_error());
         }
     }
-    include 'userid.php';
+}
+main();
 ?>
