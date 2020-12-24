@@ -23,3 +23,9 @@ ALTER TABLE `users`
 
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+
+
+train
+  create table user_register(userid int(10) NOT NULL AUTO_INCREMENT PRIMARY KEY, username varchar(50), password varchar(50));
+  create table user_reservation(userid int(10) NOT NULL references user_register(userid),ticketid int(10) NOT NULL AUTO_INCREMENT PRIMARY KEY, sourceaddr varchar(100), destinationaddr varchar(100), amount int(10));
+  alter table user_reservation add constraint fkuserid foreign key(userid) references user_register(userid);

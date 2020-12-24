@@ -29,33 +29,12 @@
             width: 100px;
         }
         /*new alert style*/
-        /* The alert message box */
         
         .alert {
             padding: 20px;
-            background-color: #f44336;
-            /* Red */
-            color: white;
             margin-bottom: 15px;
             visibility: hidden;
             position: absolute;
-        }
-        /* The close button */
-        
-        .closebtn {
-            margin-left: 15px;
-            color: white;
-            font-weight: bold;
-            float: right;
-            font-size: 22px;
-            line-height: 20px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        /* When moving the mouse over the close button */
-        
-        .closebtn:hover {
-            color: black;
         }
     </style>
 </head>
@@ -168,7 +147,7 @@
             <div class="form-group">
                 <label class="control-label col-sm-2" for="dob">Date OF Birth:</label>
                 <div class="col-sm-10">
-                    <input type="date" class="form-control" id="dob" name="dob">
+                    <input type="date" class="form-control" id="dob" name="dob" required>
                 </div>
             </div>
             <div class="form-group">
@@ -182,10 +161,10 @@
                     <button class="btn btn-default" onclick="return chippi()" onmouseover="hideAlert()">Submit</button>
                 </div>
             </div>
+        </form>
     </div>
     </div>
     <div class="alert alert-danger" id="divAlert">
-        <span class="closebtn">&times;</span>
         <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
     </div>
 </body>
