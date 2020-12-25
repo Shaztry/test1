@@ -154,7 +154,7 @@
     </script>
     <div class="container">
         <h2>User Reservation</h2>
-        <form class="form-horizontal" name="user_reservation" method="POST" action="">
+        <form class="form-horizontal" name="user_reservation" method="POST" action="reserve.php">
             <div class="form-group">
                 <label class="control-label col-sm-2" for="userid">User id:</label>
                 <div class="col-sm-10">
