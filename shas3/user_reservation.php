@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -159,16 +162,22 @@
                 <label class="control-label col-sm-2" for="userid">User id:</label>
                 <div class="col-sm-10">
                     <?php
-                    include 'userid.php';
-                    $conn = mysqli_connect("127.0.0.1", "shas3", "shas3@123", "mydb");
+                    $hostserver = '127.0.0.1';
+                    $username = 'root';
+                    $password = '';
+                    $database = 'mydb';
+                    $conn = mysqli_connect($hostserver, $username, $password, $database);
                     if (!$conn) {
                         die("Connection Failed : " . mysqli_connect_error());
                     }
-                    $getidQuery = "select userid from user_register where username = '$username';";
+                    $getidQuery = "select userid from user_register where username like ".$_SESSION['uname']." limit 1;";
+                    echo $_SESSION["uname"];
                     $runidQuery = mysqli_query($conn, $getidQuery);
-                    $uid = mysqli_fetch_array($runidQuery);
-                    echo"
-                    <input type='text' class='form-control' id='userid' placeholder='' name='userid' onclick='hideAlert()' value='$uid[0]' readonly>
+                    echo $runidQuery;
+                    if(!$uid = mysqli_fetch_array($runidQuery))
+                        die(mysqli_error($conn));
+                    echo "
+                    <input type='text' class='form-control' id='userid' placeholder='' name='userid' onclick='hideAlert()' value=".$uid['userid']." readonly>
                     ";
                     ?>
                 </div>
