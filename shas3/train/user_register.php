@@ -1,9 +1,4 @@
-<?php
-    include 'config.php';
-    
-?>
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <title>User Register</title>
@@ -53,17 +48,22 @@
             var password = document.getElementById('password').value;
             var confirmpass = document.getElementById('confirmpass').value;
             var alert = document.getElementById('divAlert');
-            if (username == "") {
-                alert.innerHTML += "username cannot be empty";
-            } else if (password == "") {
-                alert.innerHTML += "Password cannot be empty";
-            } else if (confirmpass == "") {
-                alert.innerHTML += "Confirm password cannot be empy";
-            } else if (password != confirmpass) {
-                password = "";
+            if (username == "" || password == "") {
+                if (username == ""){
+                    alert.innerHTML += "username cannot be empty";
+                }
+                if( password == ""){
+                    alert.innerHTML += "Password cannot be empty";
+                }
+                if(confirmpass == ""){
+                    alert.innerHTML += "Confirm password cannot be empy";
+                }
+                if(!username.equals(password)){
+                    password = "";
                 confirmpass = "";
                 alert.innerHTML += "Password and Confirm pass doesn't match";
                 return false;
+                }
             }
         }
 
@@ -76,12 +76,6 @@
     <div class="container">
         <h2>User Register</h2>
         <form class="form-horizontal" name="user_registration" method="POST" action="register.php">
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="userid">User ID:</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="userid" placeholder="User ID" name="userid" onclick="hideAlert()" readonly>
-                </div>
-            </div>
             <div class="form-group">
                 <label class="control-label col-sm-2" for="username">User Name:</label>
                 <div class="col-sm-10">

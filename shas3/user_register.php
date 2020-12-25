@@ -48,17 +48,22 @@
             var password = document.getElementById('password').value;
             var confirmpass = document.getElementById('confirmpass').value;
             var alert = document.getElementById('divAlert');
-            if (username == "") {
-                alert.innerHTML += "username cannot be empty";
-            } else if (password == "") {
-                alert.innerHTML += "Password cannot be empty";
-            } else if (confirmpass == "") {
-                alert.innerHTML += "Confirm password cannot be empy";
-            } else if (password != confirmpass) {
-                password = "";
+            if (username == "" || password == "") {
+                if (username == ""){
+                    alert.innerHTML += "username cannot be empty";
+                }
+                if( password == ""){
+                    alert.innerHTML += "Password cannot be empty";
+                }
+                if(confirmpass == ""){
+                    alert.innerHTML += "Confirm password cannot be empy";
+                }
+                if(!username.equals(password)){
+                    password = "";
                 confirmpass = "";
                 alert.innerHTML += "Password and Confirm pass doesn't match";
                 return false;
+                }
             }
         }
 
