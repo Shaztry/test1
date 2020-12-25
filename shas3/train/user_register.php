@@ -48,22 +48,16 @@
             var password = document.getElementById('password').value;
             var confirmpass = document.getElementById('confirmpass').value;
             var alert = document.getElementById('divAlert');
-            if (username == "" || password == "") {
-                if (username == ""){
-                    alert.innerHTML += "username cannot be empty";
-                }
-                if( password == ""){
-                    alert.innerHTML += "Password cannot be empty";
-                }
-                if(confirmpass == ""){
-                    alert.innerHTML += "Confirm password cannot be empy";
-                }
-                if(!username.equals(password)){
-                    password = "";
-                confirmpass = "";
-                alert.innerHTML += "Password and Confirm pass doesn't match";
+            var checkpass = password.localeCompare(confirmpass);
+            if (username == "") {
+                alert.innerHTML += "username cannot be empty";
+            } else if (password == "") {
+                alert.innerHTML += "Password cannot be empty";
+            } else if (confirmpass == "") {
+                alert.innerHTML += "Confirm password cannot be empy";
+            } else if (password != confirmpass) {
+                alert.innerHTML += "Password not matching";
                 return false;
-                }
             }
         }
 
@@ -96,13 +90,12 @@
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <button class="btn btn-default" onclick="chippi()" onmouseover="hideAlert()">Submit</button>
+                    <button class="btn btn-default" onclick="return chippi()" onmouseover="hideAlert()">Submit</button>
                 </div>
             </div>
         </form>
     </div>
     <div class="alert alert-danger" id="divAlert">
-        <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
     </div>
 
 

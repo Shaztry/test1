@@ -213,7 +213,7 @@
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <button class="btn btn-default" onclick="return chippi()" onmouseover="hideAlert()">Register</button>
+                    <button class="btn btn-default" onclick="return chippi()" onmouseover="hideAlert()">Submit</button>
                 </div>
             </div>
         </form>

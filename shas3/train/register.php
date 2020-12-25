@@ -39,7 +39,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (mysqli_query($conn, $sqlQuery)) {
         mysqli_query($conn, $commit);
         mysqli_query($conn, $commit);
-        echo "<script>alert(".mysqli_query($conn, $commit).")</script>";
         echo "
         <script>
             alert('Data Inserted Successfully');
