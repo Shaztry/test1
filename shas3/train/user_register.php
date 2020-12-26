@@ -10,7 +10,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <style>
         body {
-            background-color: rgb(150, 150, 150);
+            background-color: rgba(150, 150, 150,0.4);
+            background-image: url('register.jpg');
+            background-size: cover;
         }
 
         .container {
@@ -19,8 +21,21 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background-color: rgb(250, 250, 250);
             border-radius: 5px;
+            width: 40%
+        }
+        div.container {
+            background-color: rgba(0,0,0,0.5) !important;
+            color: white;
+        }
+
+        #header2 {
+            background-color: rgb(30, 200, 50);
+            color: white;
+            height: 50px;
+            width: 100%;
+            padding: 5px;
+            text-align: center;
         }
 
         #result {
@@ -68,8 +83,8 @@
         }
     </script>
     <div class="container">
-        <h2>User Register</h2>
-        <form class="form-horizontal" name="user_registration" method="POST" action="register.php">
+        <h1 class="mb-3">User Register</h1>
+        <form class="form-horizontal" name="user_registration" id="user_registration" method="POST" action="register.php">
             <div class="form-group">
                 <label class="control-label col-sm-2" for="username">User Name:</label>
                 <div class="col-sm-10">

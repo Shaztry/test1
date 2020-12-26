@@ -12,6 +12,8 @@
     <style>
         body {
             background-color: rgb(150, 150, 150);
+            background-image: url('reservation.jpg');
+            background-size: cover;
         }
 
         .container {
@@ -19,8 +21,13 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background-color: rgb(250, 250, 250);
             border-radius: 5px;
+            width: 65%;
+        }
+
+        div.container {
+            background-color: rgba(0,0,0,0.5) !important;
+            color: white;
         }
 
         #result {
@@ -169,10 +176,10 @@
                     }
                     $q_uid = "SELECT * from user_register";
                     $res_uid = mysqli_query($conn, $q_uid);
-                    while($a_uid = mysqli_fetch_assoc($res_uid)){
+                    while ($a_uid = mysqli_fetch_assoc($res_uid)) {
                         $uid = $a_uid['userid'];
                     }
-                        
+
                     echo "
                     <input type='text' class='form-control' id='userid' placeholder='' name='userid' onclick='hideAlert()' value='$uid' readonly>
                     ";
