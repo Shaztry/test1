@@ -26,10 +26,12 @@ ALTER TABLE `users`
 
 
 train
-  create table user_register(userid int(10) NOT NULL AUTO_INCREMENT PRIMARY KEY, username varchar(50), password varchar(50));
-  create table user_reservation(userid int(10) NOT NULL references user_register(userid),ticketid int(10) NOT NULL AUTO_INCREMENT PRIMARY KEY, sourceaddr varchar(100), destinationaddr varchar(100), amount int(10));
-  alter table user_reservation add constraint fkuserid foreign key(userid) references user_register(userid);
+  
+create table user_register(userid int(10) NOT NULL AUTO_INCREMENT PRIMARY KEY, username varchar(50), password varchar(50));
+create table user_reservation(userid int(10) NOT NULL references user_register(userid),ticketid int(10) NOT NULL AUTO_INCREMENT PRIMARY KEY, sourceaddr varchar(100), destinationaddr varchar(100), amount int(10));
+alter table user_reservation add constraint fkuserid foreign key(userid) references user_register(userid);
 
 
-7zip link
-https://www.7-zip.org/a/7z1900-x64.exe
+Software links
+7zip - https://www.7-zip.org/a/7z1900-x64.exe
+dbeaver - https://dbeaver.io/files/dbeaver-ce-latest-x86_64-setup.exe
